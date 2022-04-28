@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #ffffff;
+  justify-content: space-between;
+
+}
+
+.tweeterlogo {
+  display: flex;
+  margin: 1.5em;
+  font-family: "Bungee", sans-serif; /*Just for tweeter logo*/
+} 
+
+.write-right {
+  display: flex;
+  flex-flow: column wrap;
+  margin: .8em;
+}
+.write-tweet {
+  font-size: .8em;
+  margin-bottom: 0;
+}
+
