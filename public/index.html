@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" /><!--layout-->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/> <!--nav-->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" /> <!--header-->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" /> <!--new-tweet-->
 
 
     <!-- External JS -->
@@ -42,14 +43,23 @@
         </div>
         <br>
         <div>
-            <h2>Your Name</h2>
+            <h2>April Ludgate</h2>
         </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Let's see if this works...</h1>
-      <p> Run rip run cellar contact center fielder bush league season hey batter. Rubber petey catcher first baseman run run batted in bush league silver slugger inside. Helmet pickoff pine tar baseline stance sweep leather pine tar chin music. Small ball perfect game outfield 4-6-3 cup of coffee outside bush league. Gap passed ball alley extra innings arm, inning robbed. Baseball bleeder defensive indifference second baseman silver slugger starter away.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <label for="tweet-post">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="submit-tweet">
+            <button class ="tweet-btn" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
