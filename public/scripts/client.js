@@ -5,7 +5,7 @@ const data = [
   {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg"
       ,
       "handle": "@SirIsaac"
     },
@@ -17,7 +17,7 @@ const data = [
   {
     "user": {
       "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg",
       "handle": "@rd" },
     "content": {
       "text": "Je pense , donc je suis"
@@ -27,7 +27,7 @@ const data = [
   {
     "user": {
       "name": "Donald Glover",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg"
       ,
       "handle": "@childishMoschino"
     },
@@ -45,7 +45,7 @@ for (const tweet of tweets) {
 }
 
 
-const createTweetElement = function(tweet) { //creating tweet element
+const createTweetElement = function(tweet) { //creating new tweet 
 let $tweet = `
 <article class="tweet">
           <header>
@@ -71,8 +71,14 @@ let $tweet = `
           </div>
           </footer>
         </article>
-        `
-        return $tweet
-}
+        `;
+        return $tweet;
+};
 
-renderTweets(data)
+// renderTweets(data)
+// console.log(createTweetElement(data));
+
+$(document).ready(() => {
+  renderTweets(data);
+
+}); 

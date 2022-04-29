@@ -20,16 +20,23 @@ article.tweet {
 
 .user {
   display: flex;
+}
+
+.avatars { /* avatar api*/
+  display: flex;
+  flex-direction: row;
+  max-width: 60px;
+  max-height: 60px;
+}
+
+h3 { /* name of user */
+  font-weight: 500;
+  width: fit-content;
+  font-size: 20px;
 
 }
 
-.user img { /* avatar api*/
-  max-width: 64px;
-  max-height: 64px;
-  padding: 5px;
-}
-
-.username {  /* handle */
+.handle {  /* handle */
   color: rgb(203, 210, 216);
   font-weight: 600;
   display:flex;
