@@ -1,6 +1,8 @@
 .nav {
   height: 120px;
   width: 100%;
+  position: fixed;
+  top: 0;
   background-color: #4056A1;
   color: #ffffff;
   padding-inline: 1.5em;
@@ -19,7 +21,7 @@
 .write-right {
   display: flex;
   flex-flow: column wrap;
-  margin: .8em;
+  margin: .1em;
   align-items:center;
 }
 .write-tweet {
