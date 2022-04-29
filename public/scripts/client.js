@@ -38,10 +38,41 @@ const data = [
   },
 ]
 
-const renderTweets = function(tweets) {
-
+const renderTweets = function(tweets) { //loops through tweets & calls createTweetElement for every tweet 
+for (const tweet of tweets) {
+  $('.tweet-box').prepend(createTweetElement(tweet));
+ }
 }
 
 
+const createTweetElement = function(tweet) { //creating tweet element
+let $tweet = `
+<article class="tweet">
+          <header>
+            <div class = "user">
+             <img src="${tweet.user.avatars}">
+            <h3>${tweet.user.name}</h3>
+            </div>
+            <span class="username">${tweet.user.handle}</span>
+          </header>
+          <main>
+            <p class="actual-tweet">
+            ${tweet.content.text}
+            </p>
+          </main>
+          <footer id='tweet-foot'>
+            <div class='foot-content'>
+            <p>${tweet.created_at}</p>
+            <div class='icons'>
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-repeat"></i>
+              <i class="fa-solid fa-heart"></i>
+            </div>
+          </div>
+          </footer>
+        </article>
+        `
+        return $tweet
+}
 
 renderTweets(data)
