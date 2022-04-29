@@ -2,23 +2,47 @@
   {
     "user": {
       "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg",
       "handle": "@SirIsaac"
     },
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1651091951910
+    "created_at": 1651095124613
   },
   {
     "user": {
       "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg",
       "handle": "@rd"
     },
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1651178351910
+    "created_at": 1651181524613
+  },
+  {
+    "user": {
+      "name": "April Ludgate",
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg"
+      ,
+      "handle": "@childishMoschino"
+    },
+    "content": {
+      "text": "Dogs should be rewarded for not being people"
+    },
+    "created_at": 1461116232247
+  },
+  {
+    "user": {
+      "name": "Donald Glover",
+      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg"
+      ,
+      "handle": "@childishMoschino"
+    },
+    "content": {
+      "text": "I'm on here cause I heard Elon Musk just bought up twitter :("
+    },
+    "created_at": 1461116232247
   }
 ]
