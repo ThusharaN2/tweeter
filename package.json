@@ -11,6 +11,8 @@
   "author": "Lighthouse Labs",
   "license": "ISC",
   "dependencies": {
+    "@dicebear/adventurer": "^4.10.2",
+    "@dicebear/avatars": "^4.10.2",
     "body-parser": "^1.15.2",
     "chance": "^1.0.2",
     "express": "^4.17.3",

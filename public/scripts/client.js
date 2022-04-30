@@ -1,13 +1,16 @@
 //Client-side JS logic goes here.  jQuery is already loaded
 //Reminder: Use (and do all your DOM work in) jQuery's document ready function
 
-const renderTweets = function(tweets) { //loops through tweets & calls createTweetElement for every tweet 
-for (const tweet of tweets) {
+//loops through tweets & calls createTweetElement for every tweet 
+const renderTweets = function(tweets) { 
+  $(".tweet-box").empty()
+  for (const tweet of tweets) {
   $('.tweet-box').prepend(createTweetElement(tweet));
  }
 }
 
-const createTweetElement = function(tweet) { //creating new tweet 
+//creating new tweet 
+const createTweetElement = function(tweet) { 
 let $tweet = `
 <article class="tweet">
           <header>
@@ -35,27 +38,44 @@ let $tweet = `
         </article>
         `;
         return $tweet;
-};
-
-
-const loadTweets = function() { //makes GET requests to tweet db in /tweets
-  $.ajax({
-    method: 'GET',
-    url: 'http://localhost:8080/tweets',
-  })
-  .then(function (tweet) {
-    renderTweets(tweet);
-});
 }
 
 
+//makes GET requests to tweet db in /tweets & fetches them to load onto page
+const loadTweets = function() { 
+  $.ajax({
+    method: 'GET',
+    url: 'http://localhost:8080/tweets',
+    data: "data"
+  }).then((tweet) => {
+    renderTweets(tweet);
+});
+};
+loadTweets(); //calls function or else won't load
 
-//post right away w/o refreshing 
+
+//arrow fcn 
+$('.arrow').click(function() { 
+    $(".new-tweet").slideDown()
+  })
+
+
+  //sends message if over character limit or if no characters present when posting 
+  //if anything, default shouldn't happen
 $(document).ready(() => {
-  $( '.new-tweet form' ).submit(function(event) {
-    event.preventDefault();
-    const tweetData = $( this ).serialize();
-    $.post('/tweets/', tweetData);
-  loadTweets();
-  renderTweets(data)
+  $("new-tweet").submit(function(event) {
+    event.preventDefault(); 
+    const tweetPost = $(this).serialize();
+    const charCount = Number($('output.counter').val());
+    if (charCount = 0) {
+      alert("🤡 OOPS, looks like you didn't tweet anything 🤡...");
+      return;
+    } else if (charCount > 140) {
+      alert("🥴 WOAH, hold up, please respect the max character count🥴!!!");
+      return;
+    }
+    $.post('/tweets/', tweetPost).then(() => {
+      loadNewTweet(); //starts the process to post and load onto the page
+    });
   });
+})

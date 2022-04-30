@@ -1,4 +1,8 @@
 .nav {
+  display: flex; 
+  justify-content: space-between;
+  align-items:center;
+  flex-flow: row wrap;
   height: 120px;
   width: 100%;
   position: fixed;
@@ -6,15 +10,10 @@
   background-color: #4056A1;
   color: #ffffff;
   padding-inline: 1.5em;
-  display: flex; 
-  justify-content: space-between;
-  align-items:center;
-  flex-flow: row wrap;
   z-index:1;
 }
 
 .tweeterlogo {
-  display: flex;
   margin: 1.5em;
   font-family: "Bungee", sans-serif; /*Just for tweeter logo*/
 } 
@@ -24,9 +23,14 @@
   flex-flow: column wrap;
   margin: .1em;
 }
+
 .write-tweet {
   font-size: .8em;
-  margin-bottom: 0;
+  margin-bottom: .5em;
 }
 
-
+#arrow:hover{
+  color: rgb(73, 116, 225);
+  height: 1rem;
+  cursor: pointer;
+}
