@@ -1,60 +1,11 @@
 //Client-side JS logic goes here.  jQuery is already loaded
 //Reminder: Use (and do all your DOM work in) jQuery's document ready function
-const data=[
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1651095124613
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1651181524613
-  },
-  {
-    "user": {
-      "name": "April Ludgate",
-      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg"
-      ,
-      "handle": "@childishMoschino"
-    },
-    "content": {
-      "text": "Dogs should be rewarded for not being people"
-    },
-    "created_at": 1461116232247
-  },
-  {
-    "user": {
-      "name": "Donald Glover",
-      "avatars": "https://avatars.dicebear.com/api/adventurer/:seed.svg"
-      ,
-      "handle": "@childishMoschino"
-    },
-    "content": {
-      "text": "I'm on here cause I heard Elon Musk just bought up twitter :("
-    },
-    "created_at": 1461116232247
-  }
-]
 
 const renderTweets = function(tweets) { //loops through tweets & calls createTweetElement for every tweet 
 for (const tweet of tweets) {
   $('.tweet-box').prepend(createTweetElement(tweet));
  }
 }
-
 
 const createTweetElement = function(tweet) { //creating new tweet 
 let $tweet = `
@@ -87,7 +38,7 @@ let $tweet = `
 };
 
 
-const loadTweets = function() {
+const loadTweets = function() { //makes GET requests to tweet db in /tweets
   $.ajax({
     method: 'GET',
     url: 'http://localhost:8080/tweets',
@@ -97,12 +48,14 @@ const loadTweets = function() {
 });
 }
 
-//loadTweets()
-// renderTweets(data)
-// console.log(createTweetElement(data));
 
+
+//post right away w/o refreshing 
 $(document).ready(() => {
-  renderTweets(data);
-
-}); 
-c
+  $( '.new-tweet form' ).submit(function(event) {
+    event.preventDefault();
+    const tweetData = $( this ).serialize();
+    $.post('/tweets/', tweetData);
+  loadTweets();
+  renderTweets(data)
+  });
