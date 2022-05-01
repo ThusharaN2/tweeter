@@ -19,3 +19,6 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-parser
 - Chance
 
+!["Screenshot of Login page"](https://github.com/ThusharaN2/tinyapp/blob/master/docs/:login.png?raw=true)
+!["Screenshot of Register page"](https://github.com/ThusharaN2/tinyapp/blob/master/docs/:register.png)
+!["Screenshot of new URL page"](https://github.com/ThusharaN2/tinyapp/blob/master/docs/:urls:new.png)
