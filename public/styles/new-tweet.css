@@ -15,6 +15,14 @@ textarea {
   font-size: 1em;
 }
 
+#tweet:hover {
+  border: 6px outset #35103c;
+  background-image: none;
+  outline: none;
+  transform: scale(2);
+  opacity: 1;
+}
+
 .submit-tweet {
   display: flex;
   justify-content: space-between;
@@ -31,5 +39,8 @@ textarea {
 
 .counter {
 display:flex;
+justify-content: space-between;
+padding-top: 10px;
+outline: none;
 } 
 

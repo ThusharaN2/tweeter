@@ -1,5 +1,26 @@
 //Client-side JS logic goes here.  jQuery is already loaded
 //Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ 
+//sends message if over character limit or if no characters present when posting 
+  //if anything, default shouldn't happen
+  $(document).ready(() => {
+    $("new-tweet").on ("submit", function(event) {
+      event.preventDefault(); 
+      const tweetPost = $(this).serialize();
+      const charCount = Number($('output.counter').val());
+      if (charCount = 0) {
+        alert("🤡 OOPS, looks like you didn't tweet anything 🤡...");
+        return;
+      } else if (charCount > 140) {
+        alert("🥴 WOAH, hold up, please respect the max character count🥴!!!");
+        return;
+      }
+      $.post('/tweets/', tweetPost).then(() => {
+        loadTweet(); //starts the process to post and load onto the page
+      });
+    });
+  })
+
 
 //loops through tweets & calls createTweetElement for every tweet 
 const renderTweets = function(tweets) { 
@@ -45,7 +66,7 @@ let $tweet = `
 const loadTweets = function() { 
   $.ajax({
     method: 'GET',
-    url: 'http://localhost:8080/tweets',
+    url: '/tweets',
     data: "data"
   }).then((tweet) => {
     renderTweets(tweet);
@@ -58,24 +79,3 @@ loadTweets(); //calls function or else won't load
 $('.arrow').click(function() { 
     $(".new-tweet").slideDown()
   })
-
-
-  //sends message if over character limit or if no characters present when posting 
-  //if anything, default shouldn't happen
-$(document).ready(() => {
-  $("new-tweet").submit(function(event) {
-    event.preventDefault(); 
-    const tweetPost = $(this).serialize();
-    const charCount = Number($('output.counter').val());
-    if (charCount = 0) {
-      alert("🤡 OOPS, looks like you didn't tweet anything 🤡...");
-      return;
-    } else if (charCount > 140) {
-      alert("🥴 WOAH, hold up, please respect the max character count🥴!!!");
-      return;
-    }
-    $.post('/tweets/', tweetPost).then(() => {
-      loadNewTweet(); //starts the process to post and load onto the page
-    });
-  });
-})
