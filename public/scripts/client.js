@@ -8,7 +8,7 @@
       event.preventDefault(); 
       const tweetPost = $(this).serialize();
       const charCount = Number($('output.counter').val());
-      if (charCount = 0) {
+      if (charCount === 0) {
         alert("🤡 OOPS, looks like you didn't tweet anything 🤡...");
         return;
       } else if (charCount > 140) {
@@ -48,7 +48,7 @@ let $tweet = `
           </main>
           <footer id='tweet-foot'>
             <div class='foot-content'>
-            <p>${tweet.created_at}</p>
+            <p>${timeago.format(tweet.created_at)}</p>
             <div class='icons'>
               <i class="fa-solid fa-flag"></i>
               <i class="fa-solid fa-repeat"></i>

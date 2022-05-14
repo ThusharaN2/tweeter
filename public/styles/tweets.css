@@ -82,3 +82,8 @@ article.tweet i:hover {
   border: 4px outset wheat;
   background-image: none;
 }
+
+article.tweet:hover {
+transform: translate(-5px,-5px);
+  box-shadow: 5px 5px 0px 0px #181f24, 10px 10px 0px 0px #b6b29f;
+}
