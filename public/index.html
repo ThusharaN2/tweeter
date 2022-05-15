@@ -55,8 +55,8 @@
       <!--Form container for tweets-->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
-          <label for="textarea">What are you humming about?</label>
+        <form class ="tweetform" method="POST" action="/tweets">
+          <label for="textarea" id="tweet-content">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="submit-tweet">
             <button class ="tweet-btn" type="submit">Tweet</button>
@@ -64,13 +64,14 @@
           </div>
         </form>
       </section>
+      </main>
       <!--tweets-->
-      <section class="tweet-box">       
-      </section>
+      <main class="tweet-box">       
+       </main>
       <!--scroll btn-->
       <div id="scroll-to-new-tweet">
         <i class="text-red fas fa-arrow-alt-circle-up"></i>
       </div>
-    </main>
+   
   </body>
 </html>
