@@ -12,7 +12,6 @@ $(document).ready(function () {
 
   //creating new tweet 
   const createTweetElement = function (tweetBody) {
-    console.log(tweetBody.user.avatars)
     let $tweet = (`
   <article class="tweet">
             <header>
@@ -62,7 +61,7 @@ $(document).ready(function () {
       $("#overload").slideUp(); //to make sure both errors don't show
     } else if (tweettext.length > 140) {
       $("#overload").slideDown();
-      $("#empty").slideUp(); 
+      $("#empty").slideUp();
     }
     else {
       $("#empty").slideUp();
@@ -71,7 +70,7 @@ $(document).ready(function () {
         method: "POST",
         data: $(this).serialize(),
       }).then(() => { $(this).serialize() })
-      .catch((error) => {console.error("Error: ", error)}); //catch for errors
+        .catch((error) => { console.error("Error: ", error) }); //catch for errors
       loadtweets()
       $("#tweet-text").val("")
       $(this).parent().find(".counter").text(140)

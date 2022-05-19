@@ -37,6 +37,37 @@ main {
   justify-content: center;
   background-color: #f4f1ec;
 }
+section {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  
+}
 
+/* desktop */
+ @media (min-width: 1024px) {
+ 
+  body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  body header { 
+    margin: 120px 0 150px 60px;
+    width: 50%;
+  }
 
+  main.container {
+    padding-top:150px;
+  }
+  img.avatar {
+    width:100px; 
+    display:flex;
+    justify-content:space-evenly;
+ }
+  .username {
+  display: flex;
+  justify-content: flex-end;
+}
+}

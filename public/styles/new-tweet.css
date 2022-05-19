@@ -15,13 +15,13 @@ textarea {
   font-size: 1em;
 }
 
-#overload, #empty {
+#overload, #empty { /* error messages for character limit */
   border: 0.3rem solid rgb(232, 50, 50);
   text-align: center;
-  padding: 0.5rem;
-  margin: 0.5rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #f27d81;
 }
-
 
 #tweet:hover {
   border: 6px outset #35103c;
