@@ -2,6 +2,8 @@
 //Reminder: Use (and do all your DOM work in) jQuery's document ready function
 
 $(document).ready(function () {
+  $("#empty").hide(); //character warnings in index.html
+  $("#overload").hide();
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -56,18 +58,24 @@ $(document).ready(function () {
     console.log(tweettext)
     event.preventDefault()
     if (tweettext.length === 0) {
-      $("🤡 OOPS, looks like you didn't tweet anything 🤡...").slideDown();
+      $("#empty").slideDown();
     } else if (tweettext.length > 140) {
-      $("🥴 WOAH, hold up, please respect the max character count🥴!!!").slideUp();
+      $("#overload").slideDown();
     }
-    $.ajax("/tweets/", {
-      method: "POST",
-      data: $(this).serialize(),
-    }).then(() => { $(this).serialize() });
-    loadtweets() 
-    $("#tweet-text").val("")  
-    $(this).parent().find(".counter").text(140)
+    else {
+      $("#empty").slideUp();
+      $("#overload").slideUp();
+      $.ajax("/tweets/", {
+        method: "POST",
+        data: $(this).serialize(),
+      }).then(() => { $(this).serialize() })
+      .catch((error) => {console.error("Error: ", error)}); //catch for errors
+      loadtweets()
+      $("#tweet-text").val("")
+      $(this).parent().find(".counter").text(140)
+    }
   });
+
 
   //load Tweets from db 
   const loadtweets = function () {
