@@ -58,8 +58,8 @@ article.tweet header {
 article.tweet footer {
   display: flex;
   font-size: 15px;
-  justify-content: flex-end;
-  align-items:center;
+  justify-content: flex-start; 
+  align-items:center; 
   border-top: 4px solid black;
   padding: 5px 10px
 
@@ -67,9 +67,11 @@ article.tweet footer {
 
 .icons {
   color: #4056a1;
-  padding: 0 2px;
+  padding: 5px 10px;
   display:flex;
   justify-content: space-between;
+  align-items:flex-end;
+  margin-left: auto;
 }
 
 article.tweet i:hover {
