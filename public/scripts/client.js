@@ -10,11 +10,12 @@ $(document).ready(function () {
 
   //creating new tweet 
   const createTweetElement = function (tweetBody) {
+    console.log(tweetBody.user.avatars)
     let $tweet = (`
   <article class="tweet">
             <header>
               <div class = "user">
-               <img src="${tweetBody.user.avatars}">
+               <img class = "avatar" src="${tweetBody.user.avatars}">
               <h3>${tweetBody.user.name}</h3>
               </div>
               <span class="username">${tweetBody.user.handle}</span>
@@ -63,7 +64,9 @@ $(document).ready(function () {
       method: "POST",
       data: $(this).serialize(),
     }).then(() => { $(this).serialize() });
-    loadtweets();
+    loadtweets() 
+    $("#tweet-text").val("")  
+    $(this).parent().find(".counter").text(140)
   });
 
   //load Tweets from db 

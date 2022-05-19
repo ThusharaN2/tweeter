@@ -22,11 +22,8 @@ article.tweet {
   display: flex;
 }
 
-.avatars { /* avatar api*/
-  display: flex;
-  flex-direction: row;
-  max-width: 60px;
-  max-height: 60px;
+.avatar { /* avatar api*/
+  width:120px;
 }
 
 h3 { /* name of user */
