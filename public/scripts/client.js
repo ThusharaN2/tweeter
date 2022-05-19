@@ -59,12 +59,14 @@ $(document).ready(function () {
     event.preventDefault()
     if (tweettext.length === 0) {
       $("#empty").slideDown();
+      $("#overload").slideUp(); //to make sure both errors don't show
     } else if (tweettext.length > 140) {
       $("#overload").slideDown();
+      $("#empty").slideUp(); 
     }
     else {
       $("#empty").slideUp();
-      $("#overload").slideUp();
+      $("#overload").slideUp();//makes sure both aren't showing as user posts
       $.ajax("/tweets/", {
         method: "POST",
         data: $(this).serialize(),
