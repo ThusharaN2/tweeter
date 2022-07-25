@@ -24,7 +24,9 @@ Page built with HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node,
 
 !["Front page"](https://github.com/ThusharaN2/tweeter/blob/master/docs/frontPage.png)
 Front page
+
 !["Tweets loaded with API avatar"](https://github.com/ThusharaN2/tweeter/blob/master/docs/tweets-loaded-with-API.png)
 Tweets loaded with API Avatar
+
 !["Typing into tweet-box"](https://github.com/ThusharaN2/tweeter/blob/master/docs/typing.png)
 Typing into tweet-box
