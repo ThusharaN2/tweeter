@@ -6,6 +6,17 @@ This web-app allows users to post any of their thoughts or ideas to the whole wo
 
 Page built with HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
+## Screenshots
+
+!["Front page"](https://github.com/ThusharaN2/tweeter/blob/master/docs/frontPage.png)
+Front page of Tweeter
+
+!["Tweets loaded with API avatar"](https://github.com/ThusharaN2/tweeter/blob/master/docs/tweets-loaded-with-API.png)
+Tweets loaded with API Avatar
+
+!["Typing into tweet-box"](https://github.com/ThusharaN2/tweeter/blob/master/docs/typing.png)
+Typing into tweet-box
+
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
@@ -20,14 +31,3 @@ Page built with HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node,
 - Node 5.10.x or above
 - Body-parser
 - Chance
-
-## Screenshots
-
-!["Front page"](https://github.com/ThusharaN2/tweeter/blob/master/docs/frontPage.png)
-Front page of Tweeter
-
-!["Tweets loaded with API avatar"](https://github.com/ThusharaN2/tweeter/blob/master/docs/tweets-loaded-with-API.png)
-Tweets loaded with API Avatar
-
-!["Typing into tweet-box"](https://github.com/ThusharaN2/tweeter/blob/master/docs/typing.png)
-Typing into tweet-box
